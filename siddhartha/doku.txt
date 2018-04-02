@@ -1,0 +1,3 @@
+Siddhartha
+
+Generative graphic design experiment with the full text of Hermann Hesse's "Siddhartha". This web-application displays the whole content of the book and assembles it (sentence by sentence) with randomly chosen images related to indian culture from the Metropolitan Museum of Art. 

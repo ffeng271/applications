@@ -1,0 +1,33 @@
+
+h1 {
+	font-size: calc(16px + 20vw);
+	margin-bottom: 20px;
+}
+.word-container {
+	overflow: hidden !important;
+}
+
+#controlWidth {
+	width: 100%;
+}
+
+
+@keyframes move {
+    0% {
+		width: 5%;
+    }
+    50% {
+        width: 95%;
+        }
+    100% {
+        width: 5%;
+    }
+}
+
+
+#controlWidth {
+    position: relative;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}

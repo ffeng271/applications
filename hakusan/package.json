@@ -1,0 +1,35 @@
+{
+  "name": "typolab",
+  "version": "1.0.0",
+  "description": "typographic laboratory",
+  "main": "main.js",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglifycss": "^1.0.8",
+    "pump": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timrodenbroeker/typolab.git"
+  },
+  "keywords": [
+    "typography"
+  ],
+  "author": "Tim Rodenbröker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timrodenbroeker/typolab/issues"
+  },
+  "homepage": "https://github.com/timrodenbroeker/typolab#readme"
+}

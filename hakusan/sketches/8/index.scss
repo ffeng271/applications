@@ -1,0 +1,59 @@
+h2 {
+    font-size: calc(16px + 20vw);
+}
+
+
+@keyframes tipo1 {
+    0% {margin-left: 0px;}
+    50% {margin-left: 20px;}
+    100% {margin-left: 0px;}
+}
+
+@keyframes tipo2 {
+    0% {margin-left: 0px;}
+    50% {margin-left: 10px;}
+    100% {margin-left: 0px;}
+}
+
+@keyframes tipo3 {
+    0% {margin-left: 0px;}
+    50% {margin-left: 0px;}
+    100% {margin-left: 0px;}
+}
+
+@keyframes tipo4 {
+    0% {margin-left: 0px;}
+    50% {margin-left: -10px;}
+    100% {margin-left: 0px;}
+}
+
+@keyframes tipo5 {
+    0% {margin-left: 0px;}
+    50% {margin-left: -20px;}
+    100% {margin-left: 0px;}
+}
+
+#tipo1, #tipo2, #tipo3, #tipo4, #tipo5 {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+#tipo1 {
+    animation-name: tipo1;
+}
+
+#tipo2 {
+    animation-name: tipo2;
+}
+
+#tipo3 {
+    animation-name: tipo3;
+}
+
+#tipo4 {
+    animation-name: tipo4;
+}
+
+#tipo5 {
+    animation-name: tipo5;
+}

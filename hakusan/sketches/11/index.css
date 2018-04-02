@@ -1,0 +1,1 @@
+.text-scroller{width:auto;overflow:auto;height:90vh;display:flex;justify-content:flex-start;align-items:center;padding:0 50px}.text-scroller h1{white-space:nowrap;font-size:calc(16px + 30vw)}.text-scroller::-webkit-scrollbar{visibility:hidden}.text-scroller::-webkit-scrollbar-track{visibility:hidden}.text-scroller::-webkit-scrollbar-thumb{visibility:hidden}

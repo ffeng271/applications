@@ -1,0 +1,60 @@
+h2 {
+    font-size: calc(16px + 25vw);
+}
+
+
+@keyframes tipo1 {
+    0% {margin-top: -1vw;margin-left: 1vw;}
+    50% {margin-top: 1vw;margin-left: -1vw;}
+    100% {margin-top: -1vw;margin-left: 1vw;}
+}
+
+@keyframes tipo2 {
+    0% {margin-top: 1.5vw;margin-left: 0.5vw;}
+    50% {margin-top: -1.5vw;margin-left: -0.5vw;}
+    100% {margin-top: 1.5vw;margin-left: 0.5vw;}
+}
+
+@keyframes tipo3 {
+    0% {margin-top: -0.5vw;margin-left: -0.5vw;}
+    50% {margin-top: 0.5vw;margin-left: 0.5vw;}
+    100% {margin-top: -0.5vw;margin-left: -0.5vw;}
+}
+
+@keyframes tipo4 {
+    0% {margin-top: -0.5vw;margin-left: -0.5vw;}
+    50% {margin-top: 0.5vw;margin-left: 0.5vw;}
+    100% {margin-top: -0.5vw;margin-left: -0.5vw;}
+}
+
+@keyframes tipo5 {
+    0% {margin-top: 0.5vw;margin-left: -1vw;}
+    50% {margin-top: -0.5vw;margin-left: 1vw;}
+    100% {margin-top: 0.5vw;margin-left: -1vw;}
+}
+
+#tipo1, #tipo2, #tipo3, #tipo4, #tipo5 {
+    animation-duration: 0.4s;
+    animation-iteration-count: infinite;
+
+}
+
+#tipo1 {
+    animation-name: tipo1;
+}
+
+#tipo2 {
+    animation-name: tipo2;
+}
+
+#tipo3 {
+    animation-name: tipo3;
+}
+
+#tipo4 {
+    animation-name: tipo4;
+}
+
+#tipo5 {
+    animation-name: tipo5;
+}

@@ -1,0 +1,237 @@
+#k, #l, .tooltip {
+    font-family: "roboto", arial, sans-serif;
+	font-weight: 700;
+}
+
+
+#k {
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#bg {
+    width: 100%;
+    top: 0;
+    left: 0;
+	-webkit-transition: background 1000ms ease;
+-moz-transition: background 1000ms ease;
+-ms-transition: background 1000ms ease;
+-o-transition: background 1000ms ease;
+transition: background 1000ms ease;
+}
+
+#l {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+}
+
+.l-text {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+#k {
+
+}
+
+#k, #l, #n, #bg, #image, #image2 {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    line-height: 110%;
+    }
+
+#n {
+    color: #eeeeee;
+width: 100%;
+height: 100vh;
+}
+
+
+#image, #image2 {
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#image img, #image2 img {
+    -webkit-filter: grayscale(1);
+     filter: grayscale(1);
+}
+
+
+#image img {
+    width: 100%;
+    max-width: calc(500px + 10vw);
+    transform: translateX(20%);
+}
+
+
+#image2 img {
+    max-width: calc(500px + 10vw);
+    transform: translateX(-20%);
+}
+
+
+.animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+
+/* IMAGE 1
+------------------------------ */
+
+@keyframes image1 {
+  from {
+    transform: translate3d(-100%, -50%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(-20%, 0, 0);
+  }
+}
+
+.image1 {
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+  animation-name: image1;
+}
+
+/* IMAGE 2
+------------------------------ */
+
+@keyframes image2 {
+  from {
+    transform: translate3d(100%, 50%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(20%, 0, 0);
+  }
+}
+
+.image2 {
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+  animation-name: image2;
+}
+
+/* TEXT 1
+------------------------------ */
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* TEXT 2
+------------------------------ */
+
+.txt2 {
+    -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
+    animation-timing-function: linear;
+    animation-duration: 5000ms;
+    animation-fill-mode: both;
+    animation-name: txt2;
+}
+
+@keyframes txt2 {
+  0% {
+      opacity: 0;
+      transform: scale3d(.8, .8, .8) rotate(90deg);
+  }
+
+  10% {
+      opacity: 1;
+      transform: scale3d(1, 1, 1) rotate(90deg);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale3d(1.1, 1.1, 1.1) rotate(120deg);
+  }
+}
+
+
+/* NAVIGATION
+------------------------------ */
+
+
+#siddhartha-nav {
+	height: 5vh;
+	width: 100%;
+	background: red;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10001;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#siddhartha-nav.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#regler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5vh;
+    width: 20px;
+    background: black;
+}
+
+
+.tooltip {
+    max-width: 200px;
+	position:absolute;
+	background-color:white;
+	padding:10px;
+	color: black;
+	font-size:16px;
+    text-align: center;
+}
+
+
+#indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: black;
+    width: 10px;
+    height: 5vh;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 1; }
+    70% { opacity: 0; }
+}

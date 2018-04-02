@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>Siddhartha</title>
+
+		<meta name="description" content="Description">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- bootstrap.css -->
+		<!-- <link href="stuff/bootstrap.min.css" rel="stylesheet"> -->
+
+		<!-- littlehelpers.css -->
+		<link href="stuff/littlehelpers.css" rel="stylesheet">
+
+		<link href="style.css" rel="stylesheet">
+
+		<script src="stuff/jquery-2.2.4.min.js"></script>
+		<!-- <script src="stuff/bootstrap.min.js"></script> -->
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+	</head>
+<body>
+
+<style>
+#k, #l, .tooltip {
+    font-family: "roboto", arial, sans-serif;
+	font-weight: 700;
+}
+
+
+#k {
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+#bg {
+    width: 100%;
+    top: 0;
+    left: 0;
+	-webkit-transition: background 1000ms ease;
+-moz-transition: background 1000ms ease;
+-ms-transition: background 1000ms ease;
+-o-transition: background 1000ms ease;
+transition: background 1000ms ease;
+}
+
+#l {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+}
+
+.l-text {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+#k {
+
+}
+
+#k, #l, #n, #bg, #image, #image2 {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    line-height: 110%;
+    }
+
+#n {
+    color: #eeeeee;
+width: 100%;
+height: 100vh;
+}
+
+
+#image, #image2 {
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#image img, #image2 img {
+    -webkit-filter: grayscale(1);
+     filter: grayscale(1);
+}
+
+
+#image img {
+    width: 100%;
+    max-width: calc(500px + 10vw);
+    transform: translateX(20%);
+}
+
+
+#image2 img {
+    max-width: calc(500px + 10vw);
+    transform: translateX(-20%);
+}
+
+
+.animated {
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+
+/* IMAGE 1
+------------------------------ */
+
+@keyframes image1 {
+  from {
+    transform: translate3d(-100%, -50%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(-20%, 0, 0);
+  }
+}
+
+.image1 {
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+  animation-name: image1;
+}
+
+/* IMAGE 2
+------------------------------ */
+
+@keyframes image2 {
+  from {
+    transform: translate3d(100%, 50%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(20%, 0, 0);
+  }
+}
+
+.image2 {
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+  animation-name: image2;
+}
+
+/* TEXT 1
+------------------------------ */
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+/* TEXT 2
+------------------------------ */
+
+.txt2 {
+    -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
+    animation-timing-function: linear;
+    animation-duration: 5000ms;
+    animation-fill-mode: both;
+    animation-name: txt2;
+}
+
+@keyframes txt2 {
+  0% {
+      opacity: 0;
+      transform: scale3d(.8, .8, .8) rotate(90deg);
+  }
+
+  10% {
+      opacity: 1;
+      transform: scale3d(1, 1, 1) rotate(90deg);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale3d(1.1, 1.1, 1.1) rotate(120deg);
+  }
+}
+
+
+/* NAVIGATION
+------------------------------ */
+
+
+#siddhartha-nav {
+	height: 5vh;
+	width: 100%;
+	background: red;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10001;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#siddhartha-nav.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#regler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5vh;
+    width: 20px;
+    background: black;
+}
+
+
+.tooltip {
+    max-width: 200px;
+	position:absolute;
+	background-color:white;
+	padding:10px;
+	color: black;
+	font-size:16px;
+    text-align: center;
+}
+
+
+#indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: black;
+    width: 10px;
+    height: 5vh;
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 1; }
+    70% { opacity: 0; }
+}
+
+</style>
+
+<div id="bg"></div>
+<div id="image"></div>
+<div id="image2"></div>
+<div id="l"></div>
+<div id="k"></div>
+
+<div id="siddhartha-nav">
+	<div class="tooltip"></div>
+	<div id="indicator"></div>
+</div>
+
+<script src="stuff/text.js"></script>
+
+<script>
+
+var text = book
+.replace(/\r?\n|\r/g,' ')
+.replace(/\s\s+/g, ' ')
+.replace(/--/g , ", ")
+.replace(/\. /g, ".$")
+.replace(/\! /g, "!$")
+.replace(/\? /g, "?$");
+
+var a = 0;
+
+var timeout1, timeout2, interval1;
+
+var hasBeenClicked = false;
+
+function map ( value, in_min , in_max , out_min , out_max ) {
+	return ( value - in_min ) * ( out_max - out_min ) / ( in_max - in_min ) + out_min;
+}
+
+var sentences = text.split('$');
+
+var medium_length_sentences = [];
+
+// sentences.sort(function(a, b){
+//     // ASC  -> a.length - b.length
+//     // DESC -> b.length - a.length
+//
+//   return a.length - b.length;
+// });
+
+for (var i = 0 ; i < sentences.length; i++){
+
+}
+
+for (var i = 0 ; i < sentences.length; i++){
+    if (sentences[i].length < 100 && sentences[i].length > 30){
+            medium_length_sentences.push(sentences[i]);
+    }
+}
+
+// console.log('medium_length_sentences.length = ' + medium_length_sentences.length);
+
+
+var state = true;
+var state2 = false;
+
+
+// Navigation
+
+var navChooseSentence;
+
+
+var mousex;
+var mousey;
+
+$('#siddhartha-nav').mousemove(function( e ) {
+    mousex = e.pageX; //Get X coordinates
+    mousey = e.pageY; //Get Y coordinates
+    navChooseSentence = Math.floor(map(e.clientX,0, $( window ).width(), 0,medium_length_sentences.length));
+    $('.tooltip')
+    .css("bottom", "5vh")
+    .css('left',mousex - $('.tooltip').outerWidth()/2).
+    html(medium_length_sentences[navChooseSentence]);
+});
+
+
+
+
+
+$(document).ready(function() {
+    $('.tooltip')
+    .css("bottom", "5vh")
+    .css('left',0).
+    html('siddhartha');
+
+});
+
+function loop(){
+
+// Reset a if it is larger than the array of sentences
+
+    if (a < medium_length_sentences.length){
+        a++;
+    } else {
+        a = 0;
+    }
+
+// Clear
+    $("#k").html('');
+    $("#l").html('');
+
+// Set fontsize related to text-length
+
+    // Get Text-length
+    var fontsize1 = map(medium_length_sentences[a].length,30,100,10,7)+"vw";
+    var fontsize2 = map(medium_length_sentences[a].length,30,100,100,7)+"vw";
+        // Old code
+        // var fontsize1 = 5+Math.random()*10+"vw";
+
+
+// Time offset for showing the text
+timeout1 = setTimeout(function(){
+    $("#k").html('<div class="animated fadeIn">'+medium_length_sentences[a]+'</div>');
+}, 1000);
+
+timeout2 = setTimeout(function(){
+    $("#l").html('<div class="txt2 l-text">'+medium_length_sentences[a+1]+'</div>');
+}, 2000);
+
+
+
+    if (a % 1 == 0){
+        state = !state;
+    }
+
+    if (a % 10){
+        state2 = !state2;
+    }
+
+    if (state == true){
+        $("#bg").css('background','#eeeeee');
+        $("#k").css('color','#222222');
+        $("#l").css('color','#eeeeee');
+    } else {
+        $("#bg").css('background','#222222');
+        $("#k").css('color','#eeeeee');
+        $("#l").css('color','#222222');
+    }
+
+    $('#k').css('font-size',fontsize1);
+    $('#k').css('line-height','100%');
+    $('#l').css('font-size',fontsize2);
+    $('#l').css('line-height','100%');
+
+    var chooseImage = 1+Math.floor(Math.random()*25);
+
+
+// Clipping paths
+
+    $('#image').html('<img class="image1 simg" src="img/'+chooseImage+'.gif">');
+
+    var cp1 = 20+Math.floor(Math.random()*40);
+    var cp2 = 0+Math.floor(Math.random()*10);
+    var cp3 = 0+Math.floor(Math.random()*10);
+    var cp4 = 80+Math.floor(Math.random()*20);
+    var cp5 = 70+Math.floor(Math.random()*25);
+    var cp6 = 70+Math.floor(Math.random()*25);
+    var cp7 = 70+Math.floor(Math.random()*25);
+    var cp8 = 0+Math.floor(Math.random()*25);
+
+    var polygonCode = "polygon("+ cp1 +"% "+cp2+"%, "+cp3+"% "+cp4+"%, "+cp5+"%"+cp6+"%,"+cp7+"%"+cp8+"%)";
+
+    $("#image img").css("-webkit-clip-path", polygonCode);
+
+    var chooseImage2 = 1+Math.floor(Math.random()*25);
+
+    $('#image2').html('<img class="image2 simg" src="img/'+chooseImage2+'.gif">');
+
+    var cp1b = 20+Math.floor(Math.random()*40);
+    var cp2b = 0+Math.floor(Math.random()*10);
+    var cp3b = 0+Math.floor(Math.random()*10);
+    var cp4b = 80+Math.floor(Math.random()*20);
+    var cp5b = 70+Math.floor(Math.random()*25);
+    var cp6b = 70+Math.floor(Math.random()*25);
+    var cp7b = 70+Math.floor(Math.random()*25);
+    var cp8b = 0+Math.floor(Math.random()*25);
+
+    var polygonCode2 = "polygon("+ cp1b +"% "+cp2b+"%, "+cp3b+"% "+cp4b+"%, "+cp5b+"%"+cp6b+"%,"+cp7b+"%"+cp8b+"%)";
+
+    $("#image2 img").css("-webkit-clip-path", polygonCode2);
+
+
+    // Show the indicator
+
+    var indicatorLeft = $(window).width() / medium_length_sentences.length * a;
+    console.log(indicatorLeft);
+    $('#indicator').css('left',indicatorLeft-5);
+
+}
+
+$( document ).ready(function() {
+    loop();
+});
+
+interval1 = setInterval(function(){
+    loop();
+}, 5000);
+
+
+
+
+$( "#siddhartha-nav" ).click(function() {
+    clearTimeout(timeout1);
+    clearTimeout(timeout2);
+    a = navChooseSentence-1;
+    loop();
+    clearInterval(interval1);
+    interval1 = setInterval(function(){
+            loop();
+    }, 5000);
+});
+
+$( "#k" ).click(function() {
+    clearTimeout(timeout1);
+    clearTimeout(timeout2);
+    a+=1;;
+    loop();
+    clearInterval(interval1);
+    interval1 = setInterval(function(){
+            loop();
+    }, 5000);
+});
+
+
+// Hide the timeline when mouse is not moving
+
+var timer;
+$(window).mousemove(function(e){
+    if (e.pageY > $(window).height()*0.7) {
+        console.log('aaaa');
+        $('.tooltip').fadeIn();
+        $('#siddhartha-nav').addClass('show');
+
+  try {
+    clearTimeout(timer);
+  } catch (e) {}
+  timer = setTimeout(function () {
+      $('.tooltip').fadeOut();
+      $('#siddhartha-nav').removeClass('show');
+      $('.tooltip').removeClass('show');
+}, 1000)
+};
+});
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+.verticalElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 33%;
+    // border: 10px solid red;
+
+    // transform-origin: left top 0;
+
+    h1 {
+        transform: rotate(-90deg);
+        font-size: calc(16px + 20vw);
+    }
+}

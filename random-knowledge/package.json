@@ -1,0 +1,34 @@
+{
+  "name": "randomknowledge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "google-translate-api": "^2.3.0",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^3.2.1",
+    "opn": "^5.1.0",
+    "pump": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timrodenbroeker/randomKnowledge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timrodenbroeker/randomKnowledge/issues"
+  },
+  "homepage": "https://github.com/timrodenbroeker/randomKnowledge#readme"
+}
